@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+   
+        p.error { color: rgba(253, 0, 0, 0.719) ; 
+        }     
+        br {margin-bottom: 20px;
+        }
+    </style>
+        <form action="/validate_user" method="post">
+            <lable for = "username">Username</lable>
+            <input name="username" type="text" value="{{username}}" />
+            <p class="error">{{username_error}}</p>     
+
+            <lable for = "password">Password</lable>
+            <input name = "password" type = "password" />
+            <p class="error">{{password_error}}</p>
+            
+            <lable for = "verify">Verify Password</lable>
+            <input name = "verify" type = "password" />
+            <p class="error">{{verify_error}}</p>
+
+            <lable for= "email">Email (optional)</lable>
+            <input name = "email" value="{{email}}"/>
+            <p class="error">{{email_error}}</p>
+
+            <input type="submit"/>
+        </form>
+    
+
+           
+{% endblock %}
